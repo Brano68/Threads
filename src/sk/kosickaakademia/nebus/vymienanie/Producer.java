@@ -3,6 +3,11 @@ package sk.kosickaakademia.nebus.vymienanie;
 public class Producer extends Thread{
 
     private Thread t;
+    Number number;
+
+    public Producer(Number number){
+        this.number = number;
+    }
 
     @Override
     public void run() {
@@ -12,6 +17,9 @@ public class Producer extends Thread{
                 wait();
             }
             System.out.println("Producer is running again");
+            System.out.println("And I am ready");
+            number.setNumber(number.getNumber() + 9);
+            System.out.println(number.getNumber());
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

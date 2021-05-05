@@ -4,10 +4,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Producer producer = new Producer();
+        Number number = new Number();
+        number.setNumber(4);
+
+        Producer producer = new Producer(number);
         producer.start();
 
-        Consumer consumer = new Consumer();
+        Consumer consumer = new Consumer(producer, number);
         consumer.start();
 
         System.out.println("Main finished");
