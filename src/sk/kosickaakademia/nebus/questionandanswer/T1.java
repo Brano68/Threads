@@ -18,6 +18,7 @@ public class T1 implements Runnable{
     @Override
     public void run() {
         for(int i = 0; i < s1.length; i++){
+
             chat.question(s1[i]);
         }
     }
